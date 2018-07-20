@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "arraylist.h"
+#include "feed.h"
 #include "mensaje.h"
 #include "usuario.h"
 
@@ -8,11 +9,13 @@ int main()
 {
   ArrayList* lista;
   ArrayList* lista2;
+  ArrayList* lista3;
   FILE* archivo;
   FILE* archivo2;
   int todoOk;
   char seguir = 's';
   int opcion;
+  int tam;
 
   lista = al_newArrayList();
   lista2 = al_newArrayList();
@@ -38,7 +41,8 @@ int main()
     {
       printf("1-Mostrar usuarios\n");
       printf("2-Mostrar publicaciones\n");
-      printf("3-Salir\n");
+      printf("3-Mostrar feed\n");
+      printf("4-Salir\n");
 
       scanf("%d",&opcion);
 
@@ -51,6 +55,10 @@ int main()
             mostrarMensajes(lista);
             break;
        case 3:
+            lista3 = crear_Feed(lista2,lista);
+            listarFeed(lista3);
+            break;
+       case 4:
             seguir = 'n';
             break;
 
