@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="arraylist.h" />
+		<Unit filename="feed.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="feed.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

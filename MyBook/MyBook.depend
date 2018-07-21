@@ -42,7 +42,7 @@
 
 1532029626 c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\arraylist.h
 
-1532119234 source:c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\main.c
+1532206319 source:c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\main.c
 	<stdio.h>
 	<stdlib.h>
 	"arraylist.h"
@@ -50,11 +50,11 @@
 	"mensaje.h"
 	"usuario.h"
 
-1532034966 c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\mensaje.h
+1532203845 c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\mensaje.h
 
-1532037432 c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\usuario.h
+1532200706 c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\usuario.h
 
-1532035880 source:c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\mensaje.c
+1532204037 source:c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\mensaje.c
 	"stdio.h"
 	<stdlib.h>
 	"arraylist.h"
@@ -62,7 +62,7 @@
 	"string.h"
 	"conio.h"
 
-1532038734 source:c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\usuario.c
+1532201895 source:c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\usuario.c
 	<stdio.h>
 	<stdlib.h>
 	"arraylist.h"
@@ -70,7 +70,7 @@
 	"string.h"
 	"conio.h"
 
-1532118198 source:c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\feed.c
+1532206183 source:c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\feed.c
 	<stdio.h>
 	<stdlib.h>
 	"arraylist.h"
@@ -80,5 +80,5 @@
 	"string.h"
 	"conio.h"
 
-1532119234 c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\feed.h
+1532205643 c:\users\vallejos gustavo\desktop\practica final\mirepo\practicafinal\mybook\mybook\feed.h
 

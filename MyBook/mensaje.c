@@ -14,6 +14,82 @@ eMensaje* new_msj()
 
 
 }
+int set_eMensajeID(eMensaje* this,int id)
+{
+  int retorno = 0;
+  if(this!=NULL && id>=0)
+  {
+    this->ID_MENSAJE = id;
+    retorno = 1;
+  }
+  return retorno;
+}
+int set_eMensajeMSJ(eMensaje* this, char* msj)
+{
+  int retorno = 0;
+  if(this!=NULL && strlen(msj)>3)
+  {
+    strcpy(this->MENSAJE,msj);
+    retorno = 1;
+  }
+  return retorno;
+}
+int set_eMensajePOPU(eMensaje* this,int like)
+{
+  int retorno = 0;
+  if(this!=NULL && like>=0)
+  {
+    this->POPULARIDAD = like;
+    retorno = 1;
+  }
+  return retorno;
+}
+int set_eMensajeIDUSU(eMensaje* this,int idUsu)
+{
+  int retorno = 0;
+  if(this!=NULL && idUsu>=0)
+  {
+    this->ID_USUARIO = idUsu;
+    retorno = 1;
+  }
+  return retorno;
+}
+int get_eMensajeID(eMensaje*this)
+{
+  int aux;
+  if(this!=NULL)
+  {
+    aux = this->ID_MENSAJE;
+  }
+  return aux;
+}
+char* get_eMensajeMSJ(eMensaje*this)
+{
+  char* aux;
+  if(this!=NULL)
+  {
+    aux = this->MENSAJE;
+  }
+  return aux;
+}
+int get_eMensajePOPU(eMensaje* this)
+{
+  int aux;
+  if(this!=NULL)
+  {
+   aux = this->POPULARIDAD;
+  }
+  return aux;
+}
+int get_eMensajeIDUSU(eMensaje*this)
+{
+  int aux;
+  if(this!=NULL)
+  {
+    aux = this->ID_USUARIO;
+  }
+  return aux;
+}
 int leer_Mensajes(FILE* archivo,ArrayList* this)
 {
   char auxId[500];
@@ -33,10 +109,10 @@ int leer_Mensajes(FILE* archivo,ArrayList* this)
     miMensaje = new_msj();
     if(miMensaje!=NULL)
     {
-      miMensaje->ID_MENSAJE = atoi(auxId);
-      miMensaje->ID_USUARIO = atoi(idUsu);
-      miMensaje->POPULARIDAD = atoi(auxPopu);
-      strcpy(miMensaje->MENSAJE,auxMensaje);
+      set_eMensajeID(miMensaje,atoi(auxId));
+      set_eMensajeIDUSU(miMensaje,atoi(idUsu));
+      set_eMensajePOPU(miMensaje,atoi(auxPopu));
+      set_eMensajeMSJ(miMensaje,auxMensaje);
 
       al_add(this,miMensaje);
       retorno = 0;
@@ -57,9 +133,9 @@ void mostrarMensajes(ArrayList* this)
     {
       auxMsj = (eMensaje*)al_get(this,i);
       printf("ID MSJ\tID USU\tLIKES\n");
-      printf("%d\t%d\t%d\n",auxMsj->ID_MENSAJE,auxMsj->ID_USUARIO,auxMsj->POPULARIDAD);
+      printf("%d\t%d\t%d\n",get_eMensajeID(auxMsj),get_eMensajeIDUSU(auxMsj),get_eMensajePOPU(auxMsj));
       printf("MENSAJE\n");
-      printf("%s\n",auxMsj->MENSAJE);
+      printf("%s\n",get_eMensajeMSJ(auxMsj));
     }
   }
 }

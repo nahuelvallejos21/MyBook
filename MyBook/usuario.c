@@ -12,6 +12,63 @@ eUsuario* new_usuario()
   auxUsu = (eUsuario*)malloc(sizeof(eUsuario));
   return auxUsu;
 }
+int set_eUsuarioID(eUsuario* this,int id)
+{
+  int retorno = 0;
+  if(this!=NULL && id>=0)
+  {
+    this->ID_USUARIO = id;
+    retorno = 1;
+  }
+  return retorno;
+}
+int set_eUsuarioNICK(eUsuario* this,char* nick)
+{
+  int retorno = 0;
+  if(this!=NULL && strlen(nick)>=3)
+  {
+    strcpy(this->NICK,nick);
+    retorno = 1;
+  }
+  return retorno;
+}
+int set_eUsuarioPOPU(eUsuario* this,int follow)
+{
+   int retorno = 0;
+   if(this!=NULL && follow>=0)
+   {
+     this->POPULARIDAD = follow;
+     retorno = 1;
+   }
+   return retorno;
+}
+int get_eUsuarioID(eUsuario* this)
+{
+   int aux;
+   if(this!=NULL)
+   {
+     aux = this->ID_USUARIO;
+   }
+   return aux;
+}
+char* get_eUsuarioNICK(eUsuario*this)
+{
+  char* aux;
+  if(this!=NULL)
+  {
+    aux = this->NICK;
+  }
+  return aux;
+}
+int get_eUsuarioPOPU(eUsuario*this)
+{
+  int aux;
+  if(this!=NULL)
+  {
+    aux = this->POPULARIDAD;
+  }
+  return aux;
+}
 int leer_Usuarios(FILE* archivo,ArrayList* this)
 {
    char auxId[50];
@@ -31,9 +88,9 @@ int leer_Usuarios(FILE* archivo,ArrayList* this)
      {
        if(strcmp(auxId,"id")!=0 && strcmp(auxNick,"nick")!=0 && strcmp(auxPopu,"followers")!=0)
        {
-         miUsuario->ID_USUARIO = atoi(auxId);
-         strcpy(miUsuario->NICK,auxNick);
-         miUsuario->POPULARIDAD = atoi(auxPopu);
+         set_eUsuarioID(miUsuario,atoi(auxId));
+         set_eUsuarioNICK(miUsuario,auxNick);
+         set_eUsuarioPOPU(miUsuario,atoi(auxPopu));
          al_add(this,miUsuario);
          retorno = 0;
        }
@@ -53,7 +110,7 @@ void mostrarUsuarios(ArrayList* this)
     for(i=0;i<al_len(this);i++)
     {
       auxUsu = (eUsuario*)al_get(this,i);
-      printf("%d\t%s\t%d\n",auxUsu->ID_USUARIO,auxUsu->NICK,auxUsu->POPULARIDAD);
+      printf("%d\t%s\t%d\n",get_eUsuarioID(auxUsu),get_eUsuarioNICK(auxUsu),get_eUsuarioPOPU(auxUsu));
     }
    }
 }

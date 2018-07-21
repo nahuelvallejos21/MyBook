@@ -56,6 +56,7 @@ int main()
             break;
        case 3:
             lista3 = crear_Feed(lista2,lista);
+            //mostrarFeed(lista3);
             listarFeed(lista3);
             break;
        case 4:
